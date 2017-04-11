@@ -1,0 +1,4 @@
+
+
+create user 'venice'@'localhost' IDENTIFIED BY 'pass1';
+GRANT ALL ON venice.* TO 'venice'@'localhost';
