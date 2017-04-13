@@ -5,6 +5,8 @@ from sqlalchemy import create_engine, desc, asc
 from models import Document, DocumentArticle
 
 APP = Flask(__name__)
+ENGINE = create_engine("mysql+pymysql://venice:pass1@localhost/venice?charset=utf8")
+SESS = sessionmaker(bind=ENGINE)
 
 
 @APP.route('/documentarticles/<int:id>',methods=['GET'])
@@ -19,7 +21,7 @@ def documentarticles_index(id):
         session.close()
         return jsonify(articles=[article.serialize for article in articles])
 
-@APP.route('/documents/', methods=['GET'], defaults={'count': 10, 'order': 'number', 'page': 0, 'dir': 'asc'})
+@APP.route('/documents/', methods=['GET'], defaults={'count': 10, 'order': 'number', 'page': 0, 'dirOrder': 'asc'})
 @APP.route('/documents/<string:order>/<int:page>/<int:count>/<string:dirOrder>', methods=['GET'])
 def documents_index(count, order, page, dirOrder):
     """ document main route """
@@ -33,14 +35,10 @@ def documents_index(count, order, page, dirOrder):
             'custname1': Document.custname1,
             'custnip': Document.custnip,
             'excise': Document.excise}
-
-        order_by = Document.number
-        order_by = order_by_dict[order]
-        if order_by is None:
-            order_by = 'number'
+        order_by = order_by_dict[order] if order_by_dict.has_key(order) else Document.number
 
         dir_dict = {'asc': 'asc', 'desc': 'desc'}
-        diro = dir_dict[dirOrder]
+        diro = dir_dict[dirOrder] if dir_dict.has_key(dirOrder) else 'asc'
 
         session = SESS()
         try:
