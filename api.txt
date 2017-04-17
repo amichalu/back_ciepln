@@ -1,2 +1,25 @@
+API description
+
+url: https://solidity.kz/9001/
+
+1) GET /documents/<string:order>/<int:page>/<int:count>/<string:dirOrder>
+
+returns documents:
+
+  ordered by: <string:order> ['number', 'date', 'netto', 'brutto', 'custname1', 'custnip', 'excise']
+  in asc or desc order: <string:dirOrder> ['asc','desc']
+  page nmb: <int:page>
+  records count: <int:count>  
+
+e.g. https://solidity.kz:9001/documents/number/0/20/asc
+
+2) GET /documentarticles/<int:id>
+
+returns articles for given document's <int:id>
+
+e.g. https://solidity.kz:9001/documentarticles/4357
 
 
+Next steps:
+
+should be versioned like: GET /api/v1/documents/<string:order>/<int:page>/<int:count>/<string:dirOrder>
