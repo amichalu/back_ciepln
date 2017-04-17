@@ -1,4 +1,4 @@
-##### The backend api server for REACT-REDUX-FRONT front application. 
+#### The backend api server for REACT-REDUX-FRONT front application. 
 
 The technologies used so far:
 
@@ -15,7 +15,7 @@ url: https://solidity.kz/9001/ (use link with concrete api call below)
 
 e.g. **https://solidity.kz:9001/documents/number/0/20/asc**
 
-###### 1) GET /documents/<string:order>/<int:page>/<int:count>/<string:dirOrder>
+#### 1) GET /documents/<string:order>/<int:page>/<int:count>/<string:dirOrder>
 
 returns the documents:
 
@@ -55,7 +55,7 @@ e.g. https://solidity.kz:9001/documents/number/0/20/asc
 }
 ```
 
-###### 2) GET /documentarticles/<int:id>
+#### 2) GET /documentarticles/<int:id>
 
 returns articles for given document's <int:id>
 
