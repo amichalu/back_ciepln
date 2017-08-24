@@ -11,9 +11,9 @@ The technologies used so far:
 
 ###### API description
 
-url: https://solidity.kz/9001/ (use link with concrete api call below) 
+url: https://rrapp.amovile.com/documents/... (use link with concrete api call below)
 
-e.g. **https://solidity.kz:9001/documents/number/0/20/asc**
+e.g. **https://rrapp.amovile.com/documents/number/0/20/asc**
 
 #### 1) GET /documents/<string:order>/<int:page>/<int:count>/<string:dirOrder>
 
@@ -24,7 +24,7 @@ returns the documents:
   * page nmb: *<int:page>*
   * records count: *<int:count>*
 
-e.g. https://solidity.kz:9001/documents/number/0/20/asc
+e.g. https://rrapp.amovile.com/documents/number/0/20/asc
 
 ```json
 {
@@ -59,7 +59,7 @@ e.g. https://solidity.kz:9001/documents/number/0/20/asc
 
 returns articles for given document's <int:id>
 
-e.g. https://solidity.kz:9001/documentarticles/4357
+e.g. https://rrapp.amovile.com/documentarticles/4357
 
 
 ```json
