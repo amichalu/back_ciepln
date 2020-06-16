@@ -11,10 +11,6 @@ The technologies used so far:
 
 ###### API description
 
-url: https://rrapp.amovile.com/documents/... (use link with concrete api call below)
-
-e.g. **https://rrapp.amovile.com/documents/number/0/20/asc**
-
 #### 1) GET /documents/<string:order>/<int:page>/<int:count>/<string:dirOrder>
 
 returns the documents:
@@ -58,9 +54,6 @@ e.g. https://rrapp.amovile.com/documents/number/0/20/asc
 #### 2) GET /documentarticles/<int:id>
 
 returns articles for given document's <int:id>
-
-e.g. https://rrapp.amovile.com/documentarticles/4357
-
 
 ```json
 {
